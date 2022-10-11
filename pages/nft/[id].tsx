@@ -1,24 +1,29 @@
-import React from 'react'
-import { useAddress, useDisconnect, useMetamask } from '@thirdweb-dev/react'
+import React, { useEffect, useState } from 'react'
+import { useAddress, useDisconnect, useMetamask, useContract } from '@thirdweb-dev/react'
 import { GetServerSideProps } from 'next';
 import { sanityClient, urlFor } from '../../sanity'
 import { Collection } from '../../typings';
 import Link from 'next/link';
 
-interface Props{
+
+
+interface Props {
     collection: Collection
 }
 
 
-function NFTDropPage({collection}: Props) {
+
+
+function NFTDropPage({ collection }: Props) {
+
+
+
 
     // Authentication
     const connectWithMetamask = useMetamask();
     const address = useAddress();
     const disconnect = useDisconnect();
 
-
-    console.log(address)
 
 
     return (
@@ -46,13 +51,13 @@ function NFTDropPage({collection}: Props) {
                 {/* Header */}
                 <header className='flex items-center justify-between'>
                     <Link href={'/'}>
-                    <h1 className='w-52 cursor-pointer text-xl font-extralight sm:w-80'>
-                        The{' '}
-                        <span className="font-extrabold underline decoration-pink-600/50">
-                            Chang Gang
-                        </span>{' '}
-                        NFT Market Place
-                    </h1>
+                        <h1 className='w-52 cursor-pointer text-xl font-extralight sm:w-80'>
+                            The{' '}
+                            <span className="font-extrabold underline decoration-pink-600/50">
+                                Chang Gang
+                            </span>{' '}
+                            NFT Market Place
+                        </h1>
                     </Link>
 
                     <button onClick={() => address ? disconnect() : connectWithMetamask()} className='rounded-full bg-rose-400  px-4 py-2 text-xs font-bold text-white lg:px-5 lg:py-3 lg:text-base'>
