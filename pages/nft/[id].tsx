@@ -49,7 +49,7 @@ function NFTDropPage({collection}: Props) {
                     <h1 className='w-52 cursor-pointer text-xl font-extralight sm:w-80'>
                         The{' '}
                         <span className="font-extrabold underline decoration-pink-600/50">
-                            Chang Gang's
+                            Chang Gang
                         </span>{' '}
                         NFT Market Place
                     </h1>
@@ -78,7 +78,7 @@ function NFTDropPage({collection}: Props) {
                     </h1>
 
                     <p className='pt-2 text-xl text-green-500'>
-                        13 / 21 NFT's Claimed
+                        Less than 25 NFT's are left!
                     </p>
                 </div>
 
